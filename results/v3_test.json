@@ -1,0 +1,3649 @@
+{
+  "summary": {
+    "version": "v3",
+    "title": "+ Boundary few-shot",
+    "split": "test",
+    "model": "gpt-4o-mini",
+    "n": 196,
+    "valid_json_rate": 1.0,
+    "product": {
+      "accuracy": 0.7806,
+      "macro_f1": 0.7809,
+      "off_taxonomy_rate": 0.0
+    },
+    "issue": {
+      "accuracy": 0.5204,
+      "macro_f1": 0.518,
+      "off_taxonomy_rate": 0.0
+    },
+    "avg_input_tokens": 1823.9,
+    "avg_output_tokens": 72.6,
+    "avg_latency_s": 2.452,
+    "cost_usd_total": 0.0621588,
+    "summary_judge": {
+      "mean_score": 4.173,
+      "hallucination_rate": 0.0,
+      "score_distribution": {
+        "1": 0,
+        "2": 0,
+        "3": 6,
+        "4": 150,
+        "5": 40
+      }
+    }
+  },
+  "confusion_product": {
+    "labels": [
+      "bank_account",
+      "consumer_loan",
+      "credit_card",
+      "credit_reporting",
+      "debt_collection",
+      "money_transfer",
+      "mortgage",
+      "__invalid__"
+    ],
+    "matrix": [
+      [
+        23,
+        0,
+        0,
+        2,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        2,
+        22,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        18,
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        28,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        1,
+        7,
+        17,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        1,
+        1,
+        1,
+        0,
+        18,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        27,
+        0
+      ]
+    ]
+  },
+  "predictions": [
+    {
+      "id": "7483357",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está contestando a inclusão de uma falência em seu relatório de crédito, pois as datas não coincidem. Ele possui uma carta do tribunal afirmando que essa falência não deveria ser reportada.",
+      "raw": null,
+      "input_tokens": 1681,
+      "output_tokens": 66,
+      "latency_s": 3.727,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the unauthorized third party involvement."
+      }
+    },
+    {
+      "id": "7141855",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para pagar a hipoteca devido a uma situação de desastre e a falta de forbearance aprovada pelo banco. Ele solicita assistência imediata para evitar a venda de sua casa em leilão.",
+      "raw": null,
+      "input_tokens": 2058,
+      "output_tokens": 70,
+      "latency_s": 4.514,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issues but omits specific details about the consumer's situation and the urgency of needing to file for bankruptcy."
+      }
+    },
+    {
+      "id": "7074412",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor relata que foi vítima de uma fraude ao ser solicitado a enviar dinheiro para uma conta como proxy, resultando na perda de uma quantia significativa. Ele pede ajuda para lidar com a situação e questiona por que o banco não tomou medidas contra o responsável pela fraude.",
+      "raw": null,
+      "input_tokens": 1911,
+      "output_tokens": 78,
+      "latency_s": 4.953,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's efforts to resolve the issue and the abusive language from the fraudster."
+      }
+    },
+    {
+      "id": "7732802",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor depositou um cheque que foi verificado, mas o banco colocou uma retenção no cheque. Agora, ele está sem-teto porque o banco não está ligando para verificar o cheque.",
+      "raw": null,
+      "input_tokens": 1667,
+      "output_tokens": 61,
+      "latency_s": 2.181,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the check being legitimate and the specific mention of Chase Bank."
+      }
+    },
+    {
+      "id": "7821381",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor tentou pagar sua fatura do cartão de crédito Capital One, mas o site não processou o pagamento a tempo, resultando em taxas de atraso e juros. Ele deseja resolver a situação, pois acredita que não é responsável pelas cobranças adicionais.",
+      "raw": null,
+      "input_tokens": 1815,
+      "output_tokens": 71,
+      "latency_s": 4.456,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the customer service representative's rudeness and the specific amount of the late fee."
+      }
+    },
+    {
+      "id": "6874755",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor não autorizou as consultas de crédito em seu relatório e deseja que sejam removidas. Ele solicita que as empresas forneçam a aplicação com seu nome e assinatura, além de uma cópia de sua identificação para comprovar que foi ele quem iniciou a consulta.",
+      "raw": null,
+      "input_tokens": 1760,
+      "output_tokens": 77,
+      "latency_s": 5.049,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's mention of the lack of response from creditors and the stress caused by the inquiries."
+      }
+    },
+    {
+      "id": "6430530",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor descobriu que um membro da equipe de conformidade da Robinhood não tinha as qualificações necessárias para gerenciar seu dinheiro. Ele acredita que a empresa deve ter funcionários qualificados para lidar com os fundos dos clientes.",
+      "raw": null,
+      "input_tokens": 1806,
+      "output_tokens": 65,
+      "latency_s": 2.196,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the specific detail about the employee not being licensed to practice law."
+      }
+    },
+    {
+      "id": "7727009",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor fez um depósito em caixa eletrônico e não recebeu a quantia total, ficando sem {$280.00}. Ele deseja que a situação seja resolvida e que o valor perdido seja devolvido.",
+      "raw": null,
+      "input_tokens": 1783,
+      "output_tokens": 69,
+      "latency_s": 4.5,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key details of the complaint, including the missing amount and the consumer's desire for resolution."
+      }
+    },
+    {
+      "id": "7176416",
+      "gold_product": "credit_card",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está solicitando a remoção de pagamentos atrasados de seu histórico de crédito, pois esses registros estão afetando sua capacidade de comprar uma casa. Ele passou por dificuldades pessoais e financeiras, incluindo a perda de um familiar, e deseja seguir em frente.",
+      "raw": null,
+      "input_tokens": 1731,
+      "output_tokens": 76,
+      "latency_s": 3.5,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's request for the removal of late payments from their credit history and the personal difficulties they faced."
+      }
+    },
+    {
+      "id": "6443685",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está bloqueado de sua conta devido a problemas na verificação da data de nascimento. Ele deseja acessar seu crédito e está frustrado com a falta de resolução.",
+      "raw": null,
+      "input_tokens": 1710,
+      "output_tokens": 54,
+      "latency_s": 2.699,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the detail about the expired verification link and the consumer's repeated attempts to resolve the issue."
+      }
+    },
+    {
+      "id": "7380177",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor afirma que a dívida não pertence a ele e que tentou resolver a situação com a 1st Access. Ele solicita a prova de que a conta é dele e exige a remoção da conta de seu arquivo de crédito se não for fornecido um contrato assinado.",
+      "raw": null,
+      "input_tokens": 1706,
+      "output_tokens": 81,
+      "latency_s": 2.891,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's claim, their attempts to resolve the issue, and their demands regarding proof and removal of the account."
+      }
+    },
+    {
+      "id": "7236714",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor foi enganado por um indivíduo que se passou por proprietário e solicitou depósitos para alugar um imóvel. Ele deseja que a situação seja reconhecida como uma fraude e está buscando reverter as transferências feitas.",
+      "raw": null,
+      "input_tokens": 2127,
+      "output_tokens": 67,
+      "latency_s": 2.216,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the consumer's experience with the landlord and the specific amounts transferred."
+      }
+    },
+    {
+      "id": "6430284",
+      "gold_product": "credit_card",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relata que o Bank of America reportou informações incorretas sobre sua conta de crédito pessoal, listando-a como um 'charge off' em vez de 'paga por um valor menor'. Ele possui documentação que comprova que a conta foi quitada e solicita a correção dessa informação.",
+      "raw": null,
+      "input_tokens": 1765,
+      "output_tokens": 85,
+      "latency_s": 2.547,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the incorrect reporting by Bank of America and the consumer's request for correction."
+      }
+    },
+    {
+      "id": "6838832",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que suas informações foram usadas de forma inadequada, violando seus direitos de privacidade e confidencialidade. Ele solicita que as informações sejam corrigidas e que seus direitos sejam respeitados.",
+      "raw": null,
+      "input_tokens": 1830,
+      "output_tokens": 67,
+      "latency_s": 2.232,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the essence of the complaint but omits specific references to the Fair Credit Reporting Act and the details about the accounts involved."
+      }
+    },
+    {
+      "id": "7105293",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor fechou sua conta da American Express e pagou o valor total devido, mas recebeu uma cobrança de juros adicional. Ele está insatisfeito com a discrepância nas informações entre o aplicativo móvel e o site da empresa.",
+      "raw": null,
+      "input_tokens": 2037,
+      "output_tokens": 66,
+      "latency_s": 1.763,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of the complaint but omits the specific concerns about the trustworthiness of AMEX's technology and the confusion regarding the payment notifications."
+      }
+    },
+    {
+      "id": "6982070",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor percebeu que algumas informações em seu relatório de crédito estavam erradas e solicita a remoção imediata dos itens não verificáveis. Ele menciona que as agências de crédito devem autenticar essas contas conforme as seções legais mencionadas.",
+      "raw": null,
+      "input_tokens": 1741,
+      "output_tokens": 74,
+      "latency_s": 1.86,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's complaint about erroneous credit report information and their request for immediate removal of unverifiable items, along with the mention of legal sections."
+      }
+    },
+    {
+      "id": "6711776",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor está tentando refinanciar sua hipoteca devido a dificuldades financeiras relacionadas a um divórcio e uma batalha pela custódia. Ele solicita ajuda para refinanciar seu empréstimo existente.",
+      "raw": null,
+      "input_tokens": 1719,
+      "output_tokens": 64,
+      "latency_s": 1.779,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the detail about the forbearance and the consumer's equity situation."
+      }
+    },
+    {
+      "id": "6816739",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relata que sua pontuação de crédito foi comprometida devido a itens abertos por roubo de identidade. Ele solicita a remoção imediata desses itens, pois estão causando estresse emocional e financeiro.",
+      "raw": null,
+      "input_tokens": 1779,
+      "output_tokens": 66,
+      "latency_s": 2.123,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific mention of the emotional and financial stress impacting the consumer's sleep and job."
+      }
+    },
+    {
+      "id": "6698301",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor foi vítima de uma operação de fraude envolvendo serviços de investimento ilegais. Ele deseja que a situação seja investigada e que medidas sejam tomadas contra os responsáveis.",
+      "raw": null,
+      "input_tokens": 1696,
+      "output_tokens": 56,
+      "latency_s": 1.888,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the essence of the complaint but omits the specific details about the scam's orchestrator and the timeline."
+      }
+    },
+    {
+      "id": "7892378",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para acessar um pagamento retido no Venmo após uma venda. Ele deseja resolver a situação e receber o dinheiro que lhe é devido.",
+      "raw": null,
+      "input_tokens": 1770,
+      "output_tokens": 53,
+      "latency_s": 1.744,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the buyer's attempts to help and the consumer's frustration with the website."
+      }
+    },
+    {
+      "id": "7709379",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "A Avant credit retirou {$1100.00} da minha conta bancária sem permissão, sendo que o valor correto era {$380.00}. O consumidor deseja que o valor excedente seja reembolsado e que não sejam feitas cobranças indevidas no futuro.",
+      "raw": null,
+      "input_tokens": 1873,
+      "output_tokens": 85,
+      "latency_s": 2.566,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's financial difficulties and the specific amounts related to the refund process."
+      }
+    },
+    {
+      "id": "6505832",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor teve um valor de {$1800.00} retirado de sua conta, embora seu saldo fosse de apenas {$670.00}. Ele solicita que o pagamento seja revertido ou que o cheque seja enviado rapidamente devido ao impacto financeiro significativo.",
+      "raw": null,
+      "input_tokens": 1809,
+      "output_tokens": 79,
+      "latency_s": 2.868,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the company's response and the consumer's assertion that the practice should be examined."
+      }
+    },
+    {
+      "id": "7255006",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "A empresa de hipoteca retirou o pagamento da conta errada e, apesar de ter enviado um cheque certificado, o pagamento ainda não foi compensado, resultando em relatórios de atraso no crédito. O consumidor deseja resolver a situação e limpar seu crédito de pagamentos atrasados.",
+      "raw": null,
+      "input_tokens": 1803,
+      "output_tokens": 80,
+      "latency_s": 2.309,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the attempts to resolve the issue and the specific payment amount."
+      }
+    },
+    {
+      "id": "7549123",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor é vítima de roubo de identidade e questiona registros específicos em seu documento que surgiram devido a essa fraude. Ele solicita que sejam bloqueadas quaisquer informações em seu relatório de crédito que resultaram de alegações de fraude.",
+      "raw": null,
+      "input_tokens": 1811,
+      "output_tokens": 71,
+      "latency_s": 4.276,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's situation regarding identity theft and their request to block fraudulent information from their credit report."
+      }
+    },
+    {
+      "id": "7390924",
+      "gold_product": "bank_account",
+      "gold_issue": "Problem with a lender or other company charging your account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor está insatisfeito porque o Wells Fargo aceitou um pagamento através de um número de cartão antigo e descontinuado, mesmo sem autorização para pagamentos automáticos. Ele deseja que a situação seja corrigida e que sua informação não seja compartilhada irresponsavelmente.",
+      "raw": null,
+      "input_tokens": 1731,
+      "output_tokens": 82,
+      "latency_s": 2.432,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's long-standing practice of making payments manually each year."
+      }
+    },
+    {
+      "id": "7690765",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relata que sua conta foi vendida para uma empresa de cobrança após um caso de fraude. Ele solicita a exclusão de todas as informações relacionadas a ele dos três principais bureaus de crédito.",
+      "raw": null,
+      "input_tokens": 1782,
+      "output_tokens": 64,
+      "latency_s": 2.26,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details about the consumer being a victim of unauthorized use and fraud, and does not mention the request for a refund or the involvement of specific entities."
+      }
+    },
+    {
+      "id": "7692476",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor assinou um contrato com a Carmax e alega que a empresa violou a TILA ao não divulgar taxas e cobrar um pagamento inicial. Ele deseja que a Carmax responda à sua carta e reconheça a nulidade do contrato.",
+      "raw": null,
+      "input_tokens": 1919,
+      "output_tokens": 79,
+      "latency_s": 2.705,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific legal references and details about the consumer's claims regarding credit reporting."
+      }
+    },
+    {
+      "id": "7048166",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor fez uma reclamação de fraude e não recebeu correspondência sobre o andamento do caso. Ele está enfrentando cobranças duplicadas em sua conta, que resultaram em um saldo acima do limite de crédito, e não conseguiu obter ajuda adequada do atendimento ao cliente.",
+      "raw": null,
+      "input_tokens": 2057,
+      "output_tokens": 74,
+      "latency_s": 2.542,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of the complaint but omits specific details about the fraud claim and the consumer's attempts to speak with a supervisor."
+      }
+    },
+    {
+      "id": "7794172",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor foi discriminado pela Upgrade devido ao seu 'Perfil de Crédito' e não recebeu crédito, apesar de ser o consumidor original. Ele deseja que seus direitos sejam respeitados e que a situação seja corrigida.",
+      "raw": null,
+      "input_tokens": 1740,
+      "output_tokens": 68,
+      "latency_s": 2.15,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's awareness of their rights and the specific mention of the FCRA."
+      }
+    },
+    {
+      "id": "7354865",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor está enfrentando dificuldades com a execução hipotecária e a falta de resposta de um escritório de advocacia sobre a rescisão do empréstimo. Ele busca recuperar suas perdas, taxas e juros, afirmando que não foi informado adequadamente sobre os termos do contrato.",
+      "raw": null,
+      "input_tokens": 2095,
+      "output_tokens": 79,
+      "latency_s": 2.614,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issues but omits details about the conflict of interest and the impact on the consumer's family."
+      }
+    },
+    {
+      "id": "7011206",
+      "gold_product": "bank_account",
+      "gold_issue": "Problem with a lender or other company charging your account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor teve {$2000.00} roubados de sua conta corrente no Fifth Third Bank e ainda não recebeu o reembolso. Ele contatou o banco várias vezes e apresentou evidências, mas a reclamação foi negada e não há respostas sobre o status do reembolso.",
+      "raw": null,
+      "input_tokens": 1894,
+      "output_tokens": 87,
+      "latency_s": 2.948,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the hacking incident and the consumer's long-term relationship with the bank."
+      }
+    },
+    {
+      "id": "6450460",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está reclamando sobre ser vítima de roubo de identidade e solicita a remoção de itens abertos sem seu conhecimento ou consentimento. Ele deseja que os bureaus de crédito removam essas informações incorretas rapidamente.",
+      "raw": null,
+      "input_tokens": 1743,
+      "output_tokens": 70,
+      "latency_s": 2.931,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the specific requirements for proof and the urgency of the 4 business days."
+      }
+    },
+    {
+      "id": "6586953",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor financiou um carro e percebeu que a maior parte dos pagamentos vai para os juros, enquanto uma pequena parte vai para o valor financiado. Ele considera essa prática abusiva e está enviando documentos por correio.",
+      "raw": null,
+      "input_tokens": 1712,
+      "output_tokens": 74,
+      "latency_s": 2.698,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the details about the finance charge and the monthly charge mentioned in the complaint."
+      }
+    },
+    {
+      "id": "7487246",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está preocupado com a limitação permanente em sua conta PayPal, acreditando que foi um erro. Ele solicita uma reavaliação do caso para ter sua conta restabelecida e continuar usando os serviços do PayPal.",
+      "raw": null,
+      "input_tokens": 1924,
+      "output_tokens": 67,
+      "latency_s": 2.485,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's concern about the permanent limitation on their PayPal account, their belief that it was an error, and their request for a re-evaluation to restore their account."
+      }
+    },
+    {
+      "id": "7615772",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está insatisfeito com o fechamento de uma reclamação anterior sobre o Apple Card sem a oportunidade de responder. Ele argumenta sobre a validade de um certificado e se recusa a pagar uma cobrança de {$500.00}.",
+      "raw": null,
+      "input_tokens": 1916,
+      "output_tokens": 68,
+      "latency_s": 2.516,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of dissatisfaction and the consumer's argument but omits the context of the accreditation issue."
+      }
+    },
+    {
+      "id": "7023102",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está enfrentando problemas com um empréstimo para painéis solares, onde foi cobrado duas vezes devido a uma mudança no sistema de pagamento automático. Ele deseja um reembolso pela cobrança duplicada e está insatisfeito com a falta de resposta do banco.",
+      "raw": null,
+      "input_tokens": 1863,
+      "output_tokens": 81,
+      "latency_s": 2.697,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's frustration with the inability to speak to a manager."
+      }
+    },
+    {
+      "id": "7215411",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor assinou um contrato de empréstimo e tentou cancelar, mas o banco não reconhece o reembolso que foi enviado. Ele deseja que o banco aceite que o empréstimo foi pago e que não precisa continuar fazendo os pagamentos mensais.",
+      "raw": null,
+      "input_tokens": 1825,
+      "output_tokens": 77,
+      "latency_s": 2.589,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the communication with the bank and the transaction confirmation."
+      }
+    },
+    {
+      "id": "6738291",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor recebeu uma ligação de um número do Wells Fargo relatando transações fraudulentas em sua conta. Após abrir uma reclamação de fraude, o banco fechou o caso alegando que não havia nada que pudesse ser feito.",
+      "raw": null,
+      "input_tokens": 1738,
+      "output_tokens": 75,
+      "latency_s": 2.492,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the requirement for a transfer from the consumer's account to process the refund."
+      }
+    },
+    {
+      "id": "7749396",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "Recebi uma carta informando que meu pagamento mensal aumentaria significativamente. Enviei uma mensagem para a empresa pedindo explicações, mas a questão foi 'fechada' sem resposta.",
+      "raw": null,
+      "input_tokens": 1693,
+      "output_tokens": 62,
+      "latency_s": 1.809,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the specific mention of the tax increase and the date of the initial message."
+      }
+    },
+    {
+      "id": "6454087",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor está enfrentando dificuldades com a Freedom Mortgage, que ameaça a execução hipotecária de sua casa, apesar de ela ter cooperado e feito pagamentos. Ela solicita ajuda para resolver a situação, que envolve documentos assinados e alegações de fraude.",
+      "raw": null,
+      "input_tokens": 2042,
+      "output_tokens": 74,
+      "latency_s": 2.177,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue and the consumer's request for help but omits specific details about the legal context and the fraudulent alteration allegations."
+      }
+    },
+    {
+      "id": "7457834",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor não se considera responsável por duas dívidas médicas alegadas com a ARS ACCOUNT RESOLUTION e não recebeu correspondência sobre essas dívidas. Ele solicita a remoção imediata dessas dívidas de seus relatórios de crédito devido à falta de contrato e à não validação das dívidas.",
+      "raw": null,
+      "input_tokens": 1840,
+      "output_tokens": 87,
+      "latency_s": 2.681,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the mention of the HIPAA violation and the specific amounts of the alleged debts."
+      }
+    },
+    {
+      "id": "7307056",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relata que itens não verificados permanecem em seu relatório de crédito, apesar de várias solicitações por escrito. Ele deseja que as informações sejam corrigidas ou excluídas, conforme exigido pela lei.",
+      "raw": null,
+      "input_tokens": 1827,
+      "output_tokens": 67,
+      "latency_s": 2.398,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the legal requirements and the lack of original documentation."
+      }
+    },
+    {
+      "id": "6681182",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor recebeu uma carta da PHOENIX FINANCIAL SERV sobre uma dívida médica e solicitou informações sobre a dívida. Apesar do pedido de contestação, a empresa marcou a conta como cobrança em um bureau de crédito, prejudicando a pontuação de crédito do consumidor.",
+      "raw": null,
+      "input_tokens": 1870,
+      "output_tokens": 83,
+      "latency_s": 2.644,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the complaint, including the consumer's request for information and the negative impact on their credit score."
+      }
+    },
+    {
+      "id": "7734018",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor comprou um passe de viagem com seu cartão de crédito, mas o passe não funcionou e não conseguiu assistência. Ele deseja que o banco investigue a cobrança e não o responsabilize por um serviço que não pode ser utilizado.",
+      "raw": null,
+      "input_tokens": 1929,
+      "output_tokens": 68,
+      "latency_s": 2.318,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the excessive fees and the consumer's frustration with the lack of assistance."
+      }
+    },
+    {
+      "id": "7510475",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está enfrentando dificuldades com a Mohela em relação aos seus empréstimos estudantis, incluindo tratamento inadequado e problemas na recalculação do plano de pagamento. Ele deseja que sua situação seja resolvida e que seus empréstimos sejam movidos para o melhor programa disponível.",
+      "raw": null,
+      "input_tokens": 1940,
+      "output_tokens": 84,
+      "latency_s": 2.833,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issues faced by the consumer but omits specific details about the loans and the timeline of events."
+      }
+    },
+    {
+      "id": "7297887",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor comprou passagens aéreas, mas a companhia aérea faliu e não reembolsou. Ele está enfrentando dificuldades com cobranças indevidas no cartão de crédito e altas taxas de juros.",
+      "raw": null,
+      "input_tokens": 1982,
+      "output_tokens": 63,
+      "latency_s": 2.239,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details about the hotel issues and the consumer's distress regarding the credit card charges."
+      }
+    },
+    {
+      "id": "7169785",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor teve uma disputa com o banco sobre uma cobrança indevida em sua conta, que foi negada. Ele deseja recuperar seu dinheiro e que a situação seja corrigida.",
+      "raw": null,
+      "input_tokens": 1739,
+      "output_tokens": 64,
+      "latency_s": 2.76,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the fraud and the police report."
+      }
+    },
+    {
+      "id": "7603226",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O ex-marido da consumidora retirou todo o dinheiro da conta corrente da filha e a fechou sem autorização. Ela deseja saber se é legal fechar uma conta conjunta sem a aprovação de todos os titulares.",
+      "raw": null,
+      "input_tokens": 1892,
+      "output_tokens": 71,
+      "latency_s": 3.119,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the bank's lack of action and the consumer's experience with the bank staff."
+      }
+    },
+    {
+      "id": "7975149",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor entrou em contato com a Carrington Mortgage para verificar a data do primeiro pagamento após a modificação do empréstimo e foi informado que a data prometida não era válida. Ele está enfrentando problemas com a taxa de juros do empréstimo e considera entrar com pedido de falência devido à situação.",
+      "raw": null,
+      "input_tokens": 1775,
+      "output_tokens": 85,
+      "latency_s": 2.379,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the representative claiming the consumer was lying and the attached email evidence."
+      }
+    },
+    {
+      "id": "7034387",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor tentou transferir dinheiro de sua conta corrente, mas recebeu uma mensagem de erro e foi informado que a transferência não poderia ser realizada. Ele deseja ser reembolsado pelo valor que foi transferido sem seu conhecimento e permissão.",
+      "raw": null,
+      "input_tokens": 1972,
+      "output_tokens": 77,
+      "latency_s": 2.245,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's repeated attempts to file a claim."
+      }
+    },
+    {
+      "id": "7223711",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que suas informações foram usadas de forma inadequada, violando seus direitos de privacidade e confidencialidade. Ele solicita que as informações sejam corrigidas e que seus direitos sejam respeitados.",
+      "raw": null,
+      "input_tokens": 1821,
+      "output_tokens": 67,
+      "latency_s": 1.852,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the essence of the complaint but omits specific references to the Fair Credit Reporting Act and the legal sections mentioned."
+      }
+    },
+    {
+      "id": "7116709",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor foi contatado por um policial alegando que ele havia perdido uma data de julgamento e foi pressionado a pagar uma taxa de {$2000.00} enquanto estava sob efeito de medicamentos. Ele acredita que essa cobrança deve ser considerada fraudulenta, pois não estava em plena capacidade mental para entender a situação.",
+      "raw": null,
+      "input_tokens": 2102,
+      "output_tokens": 88,
+      "latency_s": 2.353,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the police contact, the payment made under duress, and the consumer's belief that the charge is fraudulent."
+      }
+    },
+    {
+      "id": "7968940",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor contestou uma dívida alegada com a AWA Collections, afirmando não ter lembrança dessa dívida. Ele solicita documentos para validar a dívida, mas não recebeu as informações e a dívida continua sendo reportada às agências de crédito.",
+      "raw": null,
+      "input_tokens": 1720,
+      "output_tokens": 75,
+      "latency_s": 2.149,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the requested documents."
+      }
+    },
+    {
+      "id": "7603500",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O comprador alega que a empresa de escrow está violando o contrato ao cobrar taxas extraordinárias e 'junk fees' indevidas. Ele solicita que essas práticas de cobrança sejam penalizadas e eliminadas.",
+      "raw": null,
+      "input_tokens": 1802,
+      "output_tokens": 65,
+      "latency_s": 1.941,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue of contract violation and the request for penalty against overcharging, but it omits details about the buyer's attempts for corrective action."
+      }
+    },
+    {
+      "id": "6413181",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor solicita uma investigação completa sobre a conduta fraudulenta e ilegal de uma empresa e seu advogado. Ele acredita que essas violações da lei são persistentes e afetam não apenas seu caso, mas também outros.",
+      "raw": null,
+      "input_tokens": 1804,
+      "output_tokens": 66,
+      "latency_s": 2.02,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of the complaint but omits specific details about the company and the extent of the violations."
+      }
+    },
+    {
+      "id": "7445662",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "Os empréstimos estudantis foram transferidos para a Nelnet, que só contabiliza 3 anos de pagamentos para a anistia. O consumidor está tendo dificuldades para obter registros devido à transferência e à falta de documentação com o novo servicer.",
+      "raw": null,
+      "input_tokens": 1710,
+      "output_tokens": 78,
+      "latency_s": 2.248,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the details about the consumer's repayment history and the specific issue with the number of payments."
+      }
+    },
+    {
+      "id": "6784630",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor teve um pagamento automático que não foi processado devido a um erro do banco, resultando em taxas de atraso que aumentaram ao longo do tempo. Ele deseja que as taxas de atraso sejam corrigidas e que sua situação de crédito seja reparada.",
+      "raw": null,
+      "input_tokens": 1855,
+      "output_tokens": 74,
+      "latency_s": 2.173,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the bank's promise to remove the late fee and the lack of follow-up from the supervisor."
+      }
+    },
+    {
+      "id": "7692538",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor depositou um cheque de {$15000.00} em sua conta poupança, mas o banco colocou um bloqueio de sete dias. Ele solicita a liberação do bloqueio, pois isso resultou em taxas excessivas para um carro alugado e na perda de um carro que estava tentando comprar.",
+      "raw": null,
+      "input_tokens": 1758,
+      "output_tokens": 93,
+      "latency_s": 2.619,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the bank's reasons for the hold and the specific timeline of events."
+      }
+    },
+    {
+      "id": "6680331",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor alega que a conta de um empréstimo de carro foi colocada de volta em seu relatório de crédito ilegalmente, apesar de estar além do prazo de prescrição para cobranças na Califórnia. Ele solicita a remoção dessa conta de todos os relatórios de crédito.",
+      "raw": null,
+      "input_tokens": 1781,
+      "output_tokens": 84,
+      "latency_s": 2.426,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's complaint about the illegal re-reporting of a car loan account and their request for its removal from credit reports."
+      }
+    },
+    {
+      "id": "8047257",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor tinha um limite de crédito de {$1500.00} para procedimentos dentários, mas ao usar o cartão, a empresa enviou um novo cartão para o endereço errado. A pessoa que recebeu o cartão antigo maximizou o limite, causando problemas financeiros ao consumidor.",
+      "raw": null,
+      "input_tokens": 1690,
+      "output_tokens": 76,
+      "latency_s": 2.56,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the test not being covered by insurance and the specific amount charged."
+      }
+    },
+    {
+      "id": "6878439",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor está recebendo chamadas constantes da Portfolio Recovery, mesmo após solicitar que parem de ligar. Ele deseja que as chamadas cessem e que a empresa respeite seu pedido.",
+      "raw": null,
+      "input_tokens": 1741,
+      "output_tokens": 61,
+      "latency_s": 1.987,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's complaint about persistent calls from Portfolio Recovery and their request for the calls to stop."
+      }
+    },
+    {
+      "id": "7761491",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor fez pagamentos para seus empréstimos estudantis, mas notou que os valores foram revertidos e não foram retirados de sua conta bancária. Ele quer entender por que os pagamentos não estão sendo aceitos e por que o valor mensal está mudando.",
+      "raw": null,
+      "input_tokens": 1938,
+      "output_tokens": 81,
+      "latency_s": 2.675,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's concern about potential fraudulent activity and the impact on their credit."
+      }
+    },
+    {
+      "id": "7031334",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor está enfrentando taxas de descoberto constantes, mesmo tendo dinheiro disponível em sua conta corrente. Ele solicita ajuda para entender e resolver esse problema com o banco.",
+      "raw": null,
+      "input_tokens": 1727,
+      "output_tokens": 55,
+      "latency_s": 2.028,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's issue with overdraft fees and their request for help."
+      }
+    },
+    {
+      "id": "6527856",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor foi cobrado em sua conta por uma taxa de limpeza ao final do contrato de aluguel, apesar de ter limpado o apartamento. Ele considera essa cobrança injusta e está preocupado com suas finanças como estudante.",
+      "raw": null,
+      "input_tokens": 1718,
+      "output_tokens": 72,
+      "latency_s": 2.16,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the account number and the presence of roommates."
+      }
+    },
+    {
+      "id": "7427016",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor refinanciou seu empréstimo de carro e notou que uma taxa de {$490.00} foi incluída no valor principal do empréstimo, o que não deveria acontecer. Ele deseja que a situação seja corrigida, pois isso resultará em mais juros a serem pagos.",
+      "raw": null,
+      "input_tokens": 1895,
+      "output_tokens": 86,
+      "latency_s": 2.647,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the conflicting information from the loan officer regarding the fee."
+      }
+    },
+    {
+      "id": "7853333",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor teve sua identidade roubada e perdeu {$1500.00} de dinheiro do aluguel devido a uma disputa não autorizada feita por um criminoso. Ele deseja que o dinheiro seja devolvido ao seu locador com a mesma facilidade com que foi retirado.",
+      "raw": null,
+      "input_tokens": 2015,
+      "output_tokens": 77,
+      "latency_s": 2.689,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the unresponsiveness of the credit union and the consumer's ongoing efforts to resolve the issue."
+      }
+    },
+    {
+      "id": "7384920",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "Minha conta foi encerrada pelo TD Bank e eles ainda não devolveram os fundos do meu saldo. Eu liguei para perguntar sobre isso, mas não recebi nenhuma explicação e não recebi o cheque com o saldo da conta.",
+      "raw": null,
+      "input_tokens": 1683,
+      "output_tokens": 76,
+      "latency_s": 2.566,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about losing access to the online portal."
+      }
+    },
+    {
+      "id": "6680618",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "Durante a Covid, o consumidor não conseguiu pagar a hipoteca em dia e informou ao banco. Após a modificação, ele foi cobrado por 5 pagamentos e teve sua dívida dobrada, além de ter o prazo estendido para 40 anos.",
+      "raw": null,
+      "input_tokens": 1745,
+      "output_tokens": 75,
+      "latency_s": 2.354,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's original mortgage rate and the claim that the bank took advantage of the situation."
+      }
+    },
+    {
+      "id": "7293303",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor não recebeu o empréstimo e está contestando a elegibilidade mencionada em uma carta. Ele solicita a remoção do empréstimo, pois não há registro dele na instituição correta.",
+      "raw": null,
+      "input_tokens": 1733,
+      "output_tokens": 66,
+      "latency_s": 2.118,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the incorrect university name and the issue with the co-signer's record."
+      }
+    },
+    {
+      "id": "7897592",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor não conseguiu se inscrever ou usar o serviço XXXX com o TD Bank devido a uma restrição. Ele deseja que a restrição seja removida para poder acessar o serviço.",
+      "raw": null,
+      "input_tokens": 1690,
+      "output_tokens": 59,
+      "latency_s": 1.927,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's issue with TD Bank and their desire to have the restriction lifted."
+      }
+    },
+    {
+      "id": "7066463",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor recebeu uma carta da empresa Mid-South Adjustment, informando que está cobrando uma dívida devida ao Departamento de Assuntos de Veteranos. Ele afirma que paga a VA todo mês e não entende por que está sendo contatado.",
+      "raw": null,
+      "input_tokens": 1686,
+      "output_tokens": 76,
+      "latency_s": 2.631,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about this being the third letter received."
+      }
+    },
+    {
+      "id": "7085764",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que várias contas violaram seus direitos de privacidade e confidencialidade de acordo com a Lei de Relato Justo de Crédito. Ele solicita a remoção imediata das informações imprecisas do seu relatório de crédito.",
+      "raw": null,
+      "input_tokens": 1917,
+      "output_tokens": 74,
+      "latency_s": 2.869,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's complaint about violations of privacy rights and the request for immediate removal of inaccurate information."
+      }
+    },
+    {
+      "id": "7639656",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para se tornar o sucessor no empréstimo hipotecário após a morte do cônjuge, pois a instituição financeira não está seguindo as regras e não fornece informações necessárias. Ele deseja que a PNC reconheça sua posição e facilite o processo de sucessão.",
+      "raw": null,
+      "input_tokens": 1920,
+      "output_tokens": 86,
+      "latency_s": 2.713,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the refusal to remove the deceased's name and the difficulties faced in obtaining necessary documents."
+      }
+    },
+    {
+      "id": "7576637",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor enviou um relatório da FTC e está insatisfeito com a falta de ação em relação a registros incorretos devido a fraude. Ele deseja que a empresa cumpra a lei e corrija as informações em seu relatório de crédito.",
+      "raw": null,
+      "input_tokens": 1728,
+      "output_tokens": 74,
+      "latency_s": 2.464,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the mention of the potential legal action if the issue is not resolved."
+      }
+    },
+    {
+      "id": "7137084",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "A Portfolio Recovery Associates tem me atacado com ameaças de ação legal e assédio por mais de 12 anos, mesmo após eu ter fornecido certidões de óbito da pessoa que gerou a dívida. Estou solicitando que parem com essa operação corrupta e removam a empresa como uma companhia pública.",
+      "raw": null,
+      "input_tokens": 1769,
+      "output_tokens": 90,
+      "latency_s": 2.81,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of the complaint but omits details about the ongoing harassment and the specific requests made to the company."
+      }
+    },
+    {
+      "id": "6599570",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor transferiu {$8000.00} para um cartão de crédito com promoção de 0% de APR, mas está sendo cobrado juros. Ele deseja entender por que está sendo cobrado juros, apesar da promoção.",
+      "raw": null,
+      "input_tokens": 1777,
+      "output_tokens": 66,
+      "latency_s": 2.331,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's long history with the credit card and the specific fee paid."
+      }
+    },
+    {
+      "id": "7851942",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "As consultas de crédito listadas são não autorizadas e o consumidor tentou várias vezes entrar em contato com as empresas diretamente para removê-las, mas não recebeu resposta.",
+      "raw": null,
+      "input_tokens": 1677,
+      "output_tokens": 57,
+      "latency_s": 2.023,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the essence of the complaint, including the unauthorized credit inquiries and the consumer's attempts to contact the companies."
+      }
+    },
+    {
+      "id": "6847836",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor relatou que a Cashapp não ajustou corretamente seu saldo após a devolução de fundos, resultando em um saldo incorreto. Ele deseja que a Cashapp revise os depósitos e ajuste seu saldo para refletir corretamente os valores.",
+      "raw": null,
+      "input_tokens": 1778,
+      "output_tokens": 71,
+      "latency_s": 2.245,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the amounts involved and the consumer's argument regarding the negative balance."
+      }
+    },
+    {
+      "id": "7169995",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relatou que existem contas em seu relatório de crédito que não pertencem a ele. Ele solicita a exclusão imediata dessas informações não verificáveis.",
+      "raw": null,
+      "input_tokens": 1752,
+      "output_tokens": 56,
+      "latency_s": 1.614,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the consumer's assertion of their rights under the FCRA."
+      }
+    },
+    {
+      "id": "6390900",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor recebeu uma declaração de hipoteca com um valor devido diferente do valor original do empréstimo. Ele entrou em contato com a empresa de hipoteca, mas foi colocado em espera após várias tentativas de esclarecimento.",
+      "raw": null,
+      "input_tokens": 1662,
+      "output_tokens": 68,
+      "latency_s": 2.073,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about being transferred to a loan consultant."
+      }
+    },
+    {
+      "id": "7237049",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "Enviei dinheiro via Venmo para um amigo próximo e, logo após, minha conta foi suspensa sem explicação. Estou aguardando uma resposta sobre a reintegração da conta e o dinheiro está retido sem motivo.",
+      "raw": null,
+      "input_tokens": 1699,
+      "output_tokens": 66,
+      "latency_s": 2.055,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific transaction amounts and the detail about the waiting period for a response."
+      }
+    },
+    {
+      "id": "7626677",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está disputando uma cobrança de {$500.00} por um serviço que não foi prestado. Ele solicita o reembolso do valor devido à falta de clareza nas comunicações sobre a disputa.",
+      "raw": null,
+      "input_tokens": 1845,
+      "output_tokens": 62,
+      "latency_s": 1.868,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific case number and the detail about the consumer's submission being timely."
+      }
+    },
+    {
+      "id": "7498563",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor recebeu uma cópia do seu relatório de crédito e notou contas e consultas não autorizadas. Ele gostaria que o problema fosse resolvido imediatamente, pois isso está dificultando o início de um novo emprego.",
+      "raw": null,
+      "input_tokens": 1677,
+      "output_tokens": 67,
+      "latency_s": 1.929,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the documentation required to remove the unauthorized items."
+      }
+    },
+    {
+      "id": "6667129",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "A empresa Caine & Wiener está reportando uma cobrança no meu crédito, mas não tenho conhecimento dessa dívida. Estou solicitando provas de que a cobrança é válida e informações sobre o procedimento utilizado para verificar essa conta.",
+      "raw": null,
+      "input_tokens": 1966,
+      "output_tokens": 69,
+      "latency_s": 2.078,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the complaint, including the company name, the consumer's lack of knowledge about the debt, and the request for proof and verification procedures."
+      }
+    },
+    {
+      "id": "7230442",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "Alguém retirou fraudulentamente {$2000.00} da minha conta corrente do Bank of America, mesmo com meu cartão de débito em minha posse. O banco negou minha reclamação e fechou o caso, deixando-me responsável pelo valor perdido.",
+      "raw": null,
+      "input_tokens": 1797,
+      "output_tokens": 82,
+      "latency_s": 2.545,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the bank's rudeness and the consumer's ongoing efforts to escalate the complaint."
+      }
+    },
+    {
+      "id": "7806357",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor enviou um cheque administrativo que foi roubado e descontado sem autorização. Ele deseja o reembolso do valor e está insatisfeito com a falta de ajuda do banco.",
+      "raw": null,
+      "input_tokens": 1741,
+      "output_tokens": 65,
+      "latency_s": 1.98,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits details about the consumer's repeated attempts to resolve the issue with Chase."
+      }
+    },
+    {
+      "id": "6450176",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor alega que informações incorretas foram incluídas em seu relatório de crédito, relacionadas a contas que não reconhece. Ele está investigando o uso não autorizado de suas informações pessoais e deseja que as informações erradas sejam corrigidas.",
+      "raw": null,
+      "input_tokens": 1776,
+      "output_tokens": 73,
+      "latency_s": 2.081,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the mention of the legal implications and the involvement of the FTC."
+      }
+    },
+    {
+      "id": "6948129",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor foi vítima de roubo de identidade e notificou as agências de crédito sobre contas que não pertencem a ele, mas as contas continuam em seu relatório de crédito. Ele solicita a intervenção da agência reguladora para remover essas informações incorretas.",
+      "raw": null,
+      "input_tokens": 2214,
+      "output_tokens": 76,
+      "latency_s": 2.321,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's situation regarding identity theft, the notification to credit agencies, and the request for regulatory intervention."
+      }
+    },
+    {
+      "id": "6968944",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor tentou adicionar um cartão pré-pago da American Express em sua carteira digital, mas o cartão foi recusado pelo emissor. Ele deseja que a American Express permita o registro do endereço de cobrança para que o cartão possa ser utilizado corretamente.",
+      "raw": null,
+      "input_tokens": 1771,
+      "output_tokens": 69,
+      "latency_s": 2.152,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer contacting customer service and the lack of options to register the billing address."
+      }
+    },
+    {
+      "id": "6426778",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor fez um pagamento de {$10000.00} para restaurar a hipoteca, mas os valores não foram aplicados corretamente. Ele está preocupado com cobranças misteriosas e não recebeu explicações sobre essas cobranças.",
+      "raw": null,
+      "input_tokens": 1732,
+      "output_tokens": 70,
+      "latency_s": 2.316,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's request for support and assistance."
+      }
+    },
+    {
+      "id": "7448035",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor reclama que o número da reclamação XXXX não foi totalmente resolvido e que não houve correção em sua pontuação de crédito. Ele afirma que nunca esteve atrasado na conta e que os encargos corporativos foram pagos corretamente, mas ainda não recebeu uma resposta adequada.",
+      "raw": null,
+      "input_tokens": 1705,
+      "output_tokens": 80,
+      "latency_s": 2.26,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's mention of feeling that the explanations border on lies and the detail about receiving money back."
+      }
+    },
+    {
+      "id": "7190947",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor recebeu uma solicitação de julgamento relacionada a um cartão de crédito, onde ameaçam tomar sua casa e veículo. Ele deseja que essa situação seja resolvida, pois está preocupado com a divulgação de suas informações financeiras.",
+      "raw": null,
+      "input_tokens": 1757,
+      "output_tokens": 64,
+      "latency_s": 1.933,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's age and the specific request for information regarding assets."
+      }
+    },
+    {
+      "id": "7836857",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor tentou fazer um pagamento do cartão de crédito, mas sua conta corrente foi bloqueada, impedindo o pagamento online. Ele deseja que o bloqueio seja removido para que possa realizar os pagamentos sem problemas.",
+      "raw": null,
+      "input_tokens": 2103,
+      "output_tokens": 63,
+      "latency_s": 1.901,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the late fee and the consumer's perfect payment history."
+      }
+    },
+    {
+      "id": "7639122",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "Enviei {$11000.00} para um amigo via CashApp, mas ele nunca recebeu os fundos. A CashApp abriu um caso, mas não conseguiu ajudar e desligou a ligação sem aviso.",
+      "raw": null,
+      "input_tokens": 1693,
+      "output_tokens": 61,
+      "latency_s": 1.738,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the courteous tone and the specific case number."
+      }
+    },
+    {
+      "id": "7912965",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Written notification about debt",
+      "resumo_pt": "O consumidor não reconhece a empresa que está tentando cobrar uma dívida e não recebeu notificações por correio sobre qualquer dívida em atraso. Ele solicita que a empresa entre em contato por correio para verificar a identidade, o valor da dívida e a data do inadimplemento.",
+      "raw": null,
+      "input_tokens": 1737,
+      "output_tokens": 79,
+      "latency_s": 2.244,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's lack of recognition of the company, absence of notifications, and their request for contact via mail to verify details."
+      }
+    },
+    {
+      "id": "6499152",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor fez transferências de saldo para o US Bank com taxa de juros de 0%, mas foi cobrado {$2.00} de juros indevidamente. Ele deseja que o banco corrija essa cobrança e mantenha os termos acordados.",
+      "raw": null,
+      "input_tokens": 2000,
+      "output_tokens": 72,
+      "latency_s": 2.154,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the balance transfers, the incorrect interest charge, and the consumer's request for correction."
+      }
+    },
+    {
+      "id": "7205444",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor pagou o restante do empréstimo de construção de crédito, mas ainda não recebeu o pagamento. Ele informou à empresa sobre suas circunstâncias especiais e solicita que o dinheiro devido seja devolvido o mais rápido possível.",
+      "raw": null,
+      "input_tokens": 1814,
+      "output_tokens": 72,
+      "latency_s": 2.179,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the identity verification issue and the amount owed."
+      }
+    },
+    {
+      "id": "7057651",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor depositou um cheque de empréstimo 401k, mas os fundos não estão disponíveis conforme prometido. Ele solicita a liberação imediata dos fundos, pois isso está causando sérios problemas financeiros.",
+      "raw": null,
+      "input_tokens": 1958,
+      "output_tokens": 64,
+      "latency_s": 2.956,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits specific details about the consumer's financial struggles and the impact of the delay."
+      }
+    },
+    {
+      "id": "7857511",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "Os empréstimos do consumidor foram consolidados e colocados em um plano de pagamento, mas a MOHELA colocou a conta em forbearance administrativa, fazendo com que os juros começassem a acumular. O consumidor deseja que a forbearance seja removida e que não seja responsável pelos juros acumulados.",
+      "raw": null,
+      "input_tokens": 1828,
+      "output_tokens": 91,
+      "latency_s": 2.566,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's previous assurances from representatives regarding the removal of forbearance."
+      }
+    },
+    {
+      "id": "6552930",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor se inscreveu para um cartão de crédito Home Depot com uma promoção de 6 meses sem juros, mas recebeu um empréstimo com taxa de juros fixa. Ele tentou resolver a situação com o credor, mas continua sendo cobrado juros e não consegue obter o pagamento mínimo sem juros em suas faturas.",
+      "raw": null,
+      "input_tokens": 1753,
+      "output_tokens": 84,
+      "latency_s": 3.26,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's complaint about the credit card application, the misunderstanding regarding the loan terms, and the ongoing issue with interest charges."
+      }
+    },
+    {
+      "id": "6846176",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que sua informação pessoal foi usada sem autorização para criar contas. Ele solicita que a situação seja investigada e corrigida, pois não deu consentimento para que informações fossem reportadas em seus relatórios de crédito.",
+      "raw": null,
+      "input_tokens": 1752,
+      "output_tokens": 71,
+      "latency_s": 1.94,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the mention of the FTC investigation and the specific issue of unauthorized use of the social security number."
+      }
+    },
+    {
+      "id": "6389151",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está enfrentando problemas para transferir dinheiro de sua conta bancária para sua conta do Paypal, devido a questões de verificação de identidade. Ele solicita que a situação seja resolvida, pois considera as perguntas de verificação inadequadas e a demora nas transferências inaceitável.",
+      "raw": null,
+      "input_tokens": 1804,
+      "output_tokens": 79,
+      "latency_s": 2.148,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue and the consumer's request but omits specific details about the verification questions and the perceived retaliation."
+      }
+    },
+    {
+      "id": "7902252",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor se inscreveu para um teste gratuito para verificar seu relatório de crédito e cancelou antes do término do período. No entanto, a empresa está tentando cobrar uma taxa não autorizada de {$20.00} de sua conta repetidamente há mais de um mês.",
+      "raw": null,
+      "input_tokens": 1696,
+      "output_tokens": 84,
+      "latency_s": 3.23,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the difficulty in reaching a representative and the fact that the attempts to debit the account are excessive."
+      }
+    },
+    {
+      "id": "6554515",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está reclamando que a contagem de pagamentos qualificados em sua conta MOHELA está incorreta devido a um período de forbearance inadequado. Ele solicita a atualização dos formulários de certificação do empregador e um reembolso pelos pagamentos feitos após uma data específica.",
+      "raw": null,
+      "input_tokens": 1718,
+      "output_tokens": 86,
+      "latency_s": 2.301,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the specific number of eligible payments and the formal letter submission."
+      }
+    },
+    {
+      "id": "6831430",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "A empresa Express Recovery afirmou que removeria um item do meu relatório de crédito, mas não o fez e não forneceu informações para validar a dívida. Quero que a empresa seja responsabilizada por essa violação da lei.",
+      "raw": null,
+      "input_tokens": 1682,
+      "output_tokens": 70,
+      "latency_s": 1.919,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the company's failure to remove the item and the consumer's desire for accountability."
+      }
+    },
+    {
+      "id": "6678279",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está solicitando uma cópia da aplicação de crédito e outros documentos relacionados, pois acredita ter sido enganado sobre as consultas ao seu crédito. Ele também menciona que uma das consultas foi duplicada e removida, mas ainda assim deseja esclarecer a situação.",
+      "raw": null,
+      "input_tokens": 1733,
+      "output_tokens": 77,
+      "latency_s": 2.249,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific request for the denial letter and the exact dates mentioned in the complaint."
+      }
+    },
+    {
+      "id": "7931128",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "Após o fechamento da minha conta devido a um roubo, a Capital One não me forneceu o dinheiro que foi roubado. Eu gostaria que eles revisassem minha reclamação e me fornecessem a documentação que usaram para negar meu pedido.",
+      "raw": null,
+      "input_tokens": 1765,
+      "output_tokens": 79,
+      "latency_s": 2.267,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific details about the theft and the amount stolen."
+      }
+    },
+    {
+      "id": "7352576",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor descobriu que o Wells Fargo criou uma conta falsa em seu nome e recebeu um cheque não compensado que continha o número da conta falsa. Ele forneceu documentos ao banco, mas não obteve informações sobre a conta e foi orientado a registrar um boletim de ocorrência.",
+      "raw": null,
+      "input_tokens": 1729,
+      "output_tokens": 83,
+      "latency_s": 2.332,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the discovery of the fake account, the uncashed check, the submission of documents, and the advice to file a police report."
+      }
+    },
+    {
+      "id": "7052880",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor abriu uma conta no Truist Bank, mas recebeu uma carta informando que a conta foi fechada. Ele quer saber por que a conta continua a ser tratada como ativa e onde está o cheque com o valor depositado.",
+      "raw": null,
+      "input_tokens": 1884,
+      "output_tokens": 70,
+      "latency_s": 2.217,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the timeline of events and the issue of being locked out of online banking."
+      }
+    },
+    {
+      "id": "7482822",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor contestou um item em seu relatório de crédito, que foi verificado como preciso pela empresa. No entanto, o consumidor entrou em contato com o tribunal e descobriu que as informações não são reportadas, solicitando a exclusão imediata do item.",
+      "raw": null,
+      "input_tokens": 1699,
+      "output_tokens": 77,
+      "latency_s": 2.303,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the mention of the FCRA section 611 and the consumer's assertion that the company's verification was either in error or a lie."
+      }
+    },
+    {
+      "id": "6744973",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor não residia na propriedade há mais de um ano e foi surpreendido com uma cobrança em seu crédito sem aviso prévio. Ele gostaria de ter sido notificado ou ter tido a chance de pagar ou corrigir a situação.",
+      "raw": null,
+      "input_tokens": 1699,
+      "output_tokens": 72,
+      "latency_s": 3.211,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the ex-wife causing damages and the specific mention of the costs involved."
+      }
+    },
+    {
+      "id": "6984747",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor tomou um empréstimo e, após enfrentar problemas familiares e perda de emprego, informou a empresa sobre sua situação. No entanto, a empresa continua a assediá-lo com chamadas constantes e divulga informações financeiras pessoais, mesmo após o pedido de cessação do contato.",
+      "raw": null,
+      "input_tokens": 1742,
+      "output_tokens": 83,
+      "latency_s": 2.475,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main points of the complaint but omits the detail about the lawsuit and the harassment of loan references."
+      }
+    },
+    {
+      "id": "7149112",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor notou que há duas contas de cobrança em seu relatório de crédito, ambas da Charter Communications, e afirma que não autorizou nenhum acordo contratual. Ele exige a remoção dessas contas de seu relatório de crédito devido ao uso indevido de suas informações pessoais.",
+      "raw": null,
+      "input_tokens": 1910,
+      "output_tokens": 78,
+      "latency_s": 2.416,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific demand for a response within 30 days and the potential legal action."
+      }
+    },
+    {
+      "id": "8040952",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "Um valor de {$650000.00} foi transferido para uma conta do Wells Fargo que não pertence ao destinatário correto devido a um e-mail falsificado. O consumidor está solicitando a devolução dos fundos e assistência imediata, pois os valores estão em risco de serem liberados para os perpetradores da fraude.",
+      "raw": null,
+      "input_tokens": 2086,
+      "output_tokens": 88,
+      "latency_s": 2.609,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the amount transferred, the issue with the recipient's account, and the consumer's request for immediate assistance."
+      }
+    },
+    {
+      "id": "7680723",
+      "gold_product": "credit_card",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que um credor violou seus direitos de privacidade e fez uso inadequado de seu relatório de crédito. Ele solicita que suas informações sejam tratadas de acordo com a lei de relatórios de crédito.",
+      "raw": null,
+      "input_tokens": 1701,
+      "output_tokens": 70,
+      "latency_s": 2.366,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific references to the sections of the law and the details about the creditor's treatment of payments."
+      }
+    },
+    {
+      "id": "6479340",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor está enfrentando um problema com um bloqueio em sua conta bancária relacionado a uma transferência de {$140.00}. Ele deseja que o banco esclareça a situação e libere o dinheiro que está retido.",
+      "raw": null,
+      "input_tokens": 1792,
+      "output_tokens": 67,
+      "latency_s": 2.343,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the details about the lack of clear communication from customer service and the specific timeline of the transfer."
+      }
+    },
+    {
+      "id": "6544490",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor é vítima de roubo de identidade e questiona registros específicos em seu documento que surgiram devido a essa fraude. Ele solicita que sejam bloqueadas as informações em seu relatório de crédito que resultaram de alegações de fraude.",
+      "raw": null,
+      "input_tokens": 1703,
+      "output_tokens": 71,
+      "latency_s": 2.512,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's situation regarding identity theft and their request to block fraudulent information from their credit report."
+      }
+    },
+    {
+      "id": "7529320",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor solicita um detalhamento dos pagamentos feitos em um ano específico, incluindo a aplicação dos valores em principal, juros, seguro residencial e impostos sobre a propriedade. Ele deseja ver como cada centavo dos pagamentos mensais foi utilizado.",
+      "raw": null,
+      "input_tokens": 1669,
+      "output_tokens": 68,
+      "latency_s": 2.063,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's request for a detailed accounting of payments, including the breakdown of how each payment was applied."
+      }
+    },
+    {
+      "id": "7508803",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor enviou cartas para remover informações pessoais de seu relatório de crédito. Ele acredita que seus direitos de privacidade foram violados por instituições financeiras que compartilharam suas informações.",
+      "raw": null,
+      "input_tokens": 1686,
+      "output_tokens": 60,
+      "latency_s": 3.027,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific legal references and the consumer's explicit mention of the Fair Credit Act."
+      }
+    },
+    {
+      "id": "6605832",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor recebeu uma comunicação de cobrança de uma dívida que ele contesta, afirmando que não deve o valor alegado. Ele solicita a verificação da dívida e a interrupção de todas as atividades de cobrança.",
+      "raw": null,
+      "input_tokens": 2038,
+      "output_tokens": 69,
+      "latency_s": 2.316,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the verification items requested by the consumer."
+      }
+    },
+    {
+      "id": "7237119",
+      "gold_product": "bank_account",
+      "gold_issue": "Problem with a lender or other company charging your account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor relata que sua conta bancária foi usada para uma transação fraudulenta de {$280.00} e o banco se recusa a corrigir a situação. Além disso, ele menciona que os representantes da empresa foram desrespeitosos e discriminatórios.",
+      "raw": null,
+      "input_tokens": 1730,
+      "output_tokens": 85,
+      "latency_s": 2.587,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the details about the wait times and the intention to file complaints."
+      }
+    },
+    {
+      "id": "7552169",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor não conseguiu fazer o pagamento da hipoteca devido a um bloqueio em sua conta, que ocorreu após tentativas de pagamento com saldo insuficiente. Ele deseja resolver a situação para poder realizar seu pagamento em dia e evitar taxas de atraso.",
+      "raw": null,
+      "input_tokens": 1870,
+      "output_tokens": 73,
+      "latency_s": 2.311,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's removal from automatic deduction and the lack of response from customer service."
+      }
+    },
+    {
+      "id": "6465294",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor fez uma modificação de empréstimo com o Wells Fargo, mas os pagamentos mensais eram altos e não recebeu notificações de execução hipotecária. Ele se sentiu estressado com a mudança constante de representantes e a falta de comunicação da empresa.",
+      "raw": null,
+      "input_tokens": 1890,
+      "output_tokens": 76,
+      "latency_s": 2.869,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the fees charged and the consumer's desire to keep their home."
+      }
+    },
+    {
+      "id": "7673231",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor tentou comprar suplementos, mas não conseguiu realizar a compra sem se inscrever em um plano de assinatura. Ele gostaria de poder fazer a compra de forma avulsa.",
+      "raw": null,
+      "input_tokens": 1674,
+      "output_tokens": 55,
+      "latency_s": 2.039,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's complaint about being unable to purchase supplements without signing up for a subscription and expresses the consumer's desire to make a single purchase."
+      }
+    },
+    {
+      "id": "6460345",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor está preocupado porque a LendingTree aparentemente compartilhou seu número de seguro social sem permissão. Ele gostaria que isso nunca mais acontecesse.",
+      "raw": null,
+      "input_tokens": 1776,
+      "output_tokens": 55,
+      "latency_s": 1.797,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main concern about the unauthorized sharing of the social security number but omits details about the context and the request for assurance that it won't happen again."
+      }
+    },
+    {
+      "id": "7295870",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor se inscreveu para um cartão de crédito e recebeu uma correspondência do banco que exibia seu número de seguro social completo na parte visível do envelope. Ele está preocupado com a privacidade e segurança de suas informações pessoais.",
+      "raw": null,
+      "input_tokens": 1661,
+      "output_tokens": 68,
+      "latency_s": 1.792,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific mention of the government-sponsored travel charge card and the fact that the SSN was visible while in transit."
+      }
+    },
+    {
+      "id": "7732204",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está enfrentando problemas para acessar sua conta no site da Experian e percebeu que informações desatualizadas sobre consultas de crédito não foram removidas por outras agências. Ele deseja que as informações sejam corrigidas e que o procedimento adequado seja seguido.",
+      "raw": null,
+      "input_tokens": 1898,
+      "output_tokens": 77,
+      "latency_s": 3.052,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's frustration with potential hacking and the specific mention of contacting the other agencies."
+      }
+    },
+    {
+      "id": "7239876",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para pagar o financiamento do carro devido a transações bancárias fraudulentas e problemas de saúde. Ele solicita que a empresa pause a recuperação do veículo devido à sua situação de roubo e fraude.",
+      "raw": null,
+      "input_tokens": 1910,
+      "output_tokens": 70,
+      "latency_s": 2.152,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issues but omits details about the consumer's request for an extension and the lack of assistance received."
+      }
+    },
+    {
+      "id": "7019225",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está contestando informações negativas que foram relatadas de forma incorreta em seu relatório de crédito. Ele solicita a prova verificável das contas listadas, pois isso está prejudicando sua capacidade de obter crédito.",
+      "raw": null,
+      "input_tokens": 1731,
+      "output_tokens": 68,
+      "latency_s": 2.076,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the mention of the Fair Credit Reporting Act and the consumer's demand for an original Consumer Contract."
+      }
+    },
+    {
+      "id": "7337129",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor fez um pagamento que pode estar bloqueado devido a sanções dos EUA e está aguardando uma licença especial do OFAC para desbloquear os fundos. Ele tentou entrar em contato com o JP Morgan Chase Bank para obter esclarecimentos, mas não obteve resposta.",
+      "raw": null,
+      "input_tokens": 1942,
+      "output_tokens": 74,
+      "latency_s": 2.191,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the payment amount and the case ID, which are important for understanding the situation."
+      }
+    },
+    {
+      "id": "6511769",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor teve sua conta no Chime fechada sem aviso prévio e não consegue acessar seu histórico financeiro. Ele solicita ajuda para entender o que aconteceu e recuperar suas informações.",
+      "raw": null,
+      "input_tokens": 1703,
+      "output_tokens": 64,
+      "latency_s": 2.034,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's complaint about the account closure and the request for help."
+      }
+    },
+    {
+      "id": "6743705",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor relata que houve um fechamento falso de sua propriedade, resultando em engano e fraude, o que causou danos financeiros e mentais. Ele deseja que a situação seja corrigida e que a documentação correta seja fornecida.",
+      "raw": null,
+      "input_tokens": 2228,
+      "output_tokens": 71,
+      "latency_s": 2.296,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue of a fake closing and the resulting damages but omits specific details about the parties involved and the request for documentation."
+      }
+    },
+    {
+      "id": "6493545",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor foi informado sobre um aumento nas parcelas do fundo de reserva da hipoteca e notou um pagamento extra de seguro residencial. Ele não conseguiu encontrar declarações anteriores do fundo de reserva no site do Chase, o que considera um comportamento suspeito.",
+      "raw": null,
+      "input_tokens": 1719,
+      "output_tokens": 74,
+      "latency_s": 2.294,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the insurance agent sending proof of the excess payment back to Chase."
+      }
+    },
+    {
+      "id": "7516666",
+      "gold_product": "bank_account",
+      "gold_issue": "Problem with a lender or other company charging your account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "Um valor de {$1900.00} foi retirado da minha conta sem autorização. Estou relatando essa transação fraudulenta e a responsabilidade que o banco está tentando me impor.",
+      "raw": null,
+      "input_tokens": 1724,
+      "output_tokens": 67,
+      "latency_s": 2.263,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details about the merchant and the provisional credit issue."
+      }
+    },
+    {
+      "id": "6648039",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor solicitou uma transferência de saldo para seu cartão de crédito Apple, mas o crédito não foi aplicado. Ele está acumulando encargos financeiros e deseja uma solução para a situação.",
+      "raw": null,
+      "input_tokens": 1823,
+      "output_tokens": 57,
+      "latency_s": 1.778,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the details about the timeline of events and the internal complaint filed."
+      }
+    },
+    {
+      "id": "7215484",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor abriu uma conta corrente e depositou dois cheques, mas o banco colocou um bloqueio nos fundos. Ele deseja recuperar o valor restante que ainda está retido após o fechamento da conta.",
+      "raw": null,
+      "input_tokens": 1931,
+      "output_tokens": 62,
+      "latency_s": 1.841,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the contradictory information received and the specific amounts involved."
+      }
+    },
+    {
+      "id": "7050057",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está enfrentando problemas com uma conta que deveria estar liquidada, mas ainda aparece em seu relatório de crédito. Ele está tentando resolver a situação para obter um empréstimo com garantia de imóvel.",
+      "raw": null,
+      "input_tokens": 1858,
+      "output_tokens": 64,
+      "latency_s": 2.094,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue and the consumer's goal but omits details about the communication difficulties and the frustration expressed."
+      }
+    },
+    {
+      "id": "7436832",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Written notification about debt",
+      "resumo_pt": "A esposa do consumidor foi contatada por uma empresa de cobrança sem que ele tivesse recebido comunicação anterior. Ele solicitou uma carta de validação da dívida, mas não recebeu resposta e deseja contestar a dívida que afirma não ser dele.",
+      "raw": null,
+      "input_tokens": 1694,
+      "output_tokens": 71,
+      "latency_s": 2.111,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific timeline of the request and the detail about the debt being from a source the consumer claims not to have held."
+      }
+    },
+    {
+      "id": "7393947",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "A empresa ligou de um número falso e não se identificou quando perguntei quem era, apenas mencionou o nome da pessoa que estava ligando. O consumidor deseja que a situação seja resolvida, pois está recebendo chamadas de números aleatórios.",
+      "raw": null,
+      "input_tokens": 1682,
+      "output_tokens": 78,
+      "latency_s": 2.336,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the company being identified as Credit Management LP and the specific issue of the calls coming from random numbers."
+      }
+    },
+    {
+      "id": "6590743",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que seus direitos foram violados de acordo com a Lei de Relato Justo. Ele afirma que uma agência de relatórios de crédito não deveria ter fornecido informações sem sua autorização escrita.",
+      "raw": null,
+      "input_tokens": 1700,
+      "output_tokens": 67,
+      "latency_s": 2.389,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific mention of the consumer's right to privacy and the late payment treatment under the credit card account."
+      }
+    },
+    {
+      "id": "7042283",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor não foi informado sobre a ativação do pagamento automático e, ao tentar fazer um pagamento normal, teve sua conta bancária negativada em {$420.00}. Ele deseja que a empresa pague as taxas de overdraft e que permita a desativação do pagamento automático.",
+      "raw": null,
+      "input_tokens": 1776,
+      "output_tokens": 86,
+      "latency_s": 2.742,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's request for notification regarding the activation of autopay."
+      }
+    },
+    {
+      "id": "6559176",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Improper use of your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor alega que várias contas violaram seus direitos de privacidade e confidencialidade de acordo com a Lei de Relato Justo de Crédito. Ele solicita que as informações sejam corrigidas e que seus direitos sejam respeitados.",
+      "raw": null,
+      "input_tokens": 1830,
+      "output_tokens": 72,
+      "latency_s": 2.484,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific references to the legal sections cited by the consumer."
+      }
+    },
+    {
+      "id": "7046984",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está enfrentando problemas com a Wells Fargo em relação à modificação do empréstimo e à aplicação incorreta dos pagamentos, resultando em taxas de atraso. Ele deseja que a Wells Fargo reconheça suas falhas e entre em contato para resolver a situação.",
+      "raw": null,
+      "input_tokens": 1995,
+      "output_tokens": 80,
+      "latency_s": 2.911,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the consumer's mention of the CFPB's involvement and the lack of communication from both Wells Fargo and the CFPB."
+      }
+    },
+    {
+      "id": "7838008",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relatou que seu cartão foi roubado e sua conta foi fechada devido a alegações de fraude. Ele deseja que a situação seja investigada, pois a informação incorreta está afetando sua capacidade de abrir uma nova conta bancária.",
+      "raw": null,
+      "input_tokens": 1797,
+      "output_tokens": 74,
+      "latency_s": 2.939,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits details about the consumer's long relationship with the bank and the specific fraudulent check issue."
+      }
+    },
+    {
+      "id": "6826913",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor não recebeu declarações mensais de um empréstimo e descobriu que estava em default após 18 meses. Eles estão tentando salvar a casa e se sentem pressionados pela situação.",
+      "raw": null,
+      "input_tokens": 1933,
+      "output_tokens": 63,
+      "latency_s": 1.988,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details about the loan balance, payment issues, and the lack of communication from the company."
+      }
+    },
+    {
+      "id": "8042917",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está insatisfeito com a falta de um extrato detalhado de pagamento de seu empréstimo estudantil após ter se inscrito para pagamentos automáticos. Ele acredita que tem direito a um extrato mensal itemizado que mostre quanto está pagando por cada empréstimo.",
+      "raw": null,
+      "input_tokens": 1905,
+      "output_tokens": 84,
+      "latency_s": 3.218,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the specific mention of the communication with Mohela and the consumer's request for future billing statements."
+      }
+    },
+    {
+      "id": "6675207",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está reclamando da Mohela por não atualizar corretamente a contagem de pagamentos qualificados após o processamento dos formulários PSLF. Ele deseja que a CFPB entre em contato com a Mohela para solicitar a atualização dos pagamentos qualificados desde o ano XXXX.",
+      "raw": null,
+      "input_tokens": 1911,
+      "output_tokens": 82,
+      "latency_s": 2.637,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's complaint about Mohela's failure to update payment counts and their request for CFPB intervention."
+      }
+    },
+    {
+      "id": "6465472",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor não recebeu os fundos de retiradas feitas através do aplicativo XXXX e acredita que a Circle Internet Financial está violando a Lei de Transferência Eletrônica de Fundos. Ele deseja uma atualização sobre o status de suas retiradas e a devolução dos fundos.",
+      "raw": null,
+      "input_tokens": 2128,
+      "output_tokens": 74,
+      "latency_s": 3.295,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the timeline and the consumer's previous communications with the company."
+      }
+    },
+    {
+      "id": "6639195",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor não recebeu o novo cartão de débito a tempo e teve sua transação recusada. Ele solicita reembolso de {$8.00} devido à taxa incorrida ao usar um cartão de crédito.",
+      "raw": null,
+      "input_tokens": 2006,
+      "output_tokens": 65,
+      "latency_s": 1.97,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the email notification regarding the delay and the mention of other customers experiencing similar issues."
+      }
+    },
+    {
+      "id": "7118398",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor teve sua conta bloqueada após solicitar uma transferência de dinheiro para outro banco e enfrentou dificuldades ao tentar abrir uma conta para sua sogra. Ele deseja que a situação seja resolvida e que possa acessar sua conta para realizar a transferência.",
+      "raw": null,
+      "input_tokens": 1899,
+      "output_tokens": 71,
+      "latency_s": 2.32,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's frustration with Marcus's handling of the transfer and the account opening process."
+      }
+    },
+    {
+      "id": "7653488",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor está enfrentando um aumento substancial em seu pagamento de hipoteca sem explicação adequada da Freedom Mortgage. Ele deseja uma resposta clara sobre o aumento e a contabilidade do seu fundo de escrow.",
+      "raw": null,
+      "input_tokens": 1948,
+      "output_tokens": 65,
+      "latency_s": 2.531,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue of the payment increase and the consumer's desire for a clear explanation, but it omits details about the lack of response from customer service."
+      }
+    },
+    {
+      "id": "7276545",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está reclamando da dedução indevida de pontos promocionais de sua conta de recompensas da American Express, sem uma explicação válida. Ele solicita uma investigação e a reintegração imediata dos pontos que foram retirados.",
+      "raw": null,
+      "input_tokens": 2060,
+      "output_tokens": 69,
+      "latency_s": 1.925,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the consumer's attempts to resolve the issue directly with American Express."
+      }
+    },
+    {
+      "id": "6715420",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "Recebi uma carta de um cobrador de dívidas chamado Frost-Arnett, alegando que devo {$80.00} de uma conta médica, mas a carta estava endereçada com o sobrenome do meu marido, o que não faz sentido. Estou apenas relatando que não paguei nada e que a empresa parece ser fraudulenta.",
+      "raw": null,
+      "input_tokens": 1762,
+      "output_tokens": 96,
+      "latency_s": 2.613,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's request not to contact the company on their behalf."
+      }
+    },
+    {
+      "id": "7490133",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "Um caçador de recompensas apareceu na casa da minha mãe para entregar documentos relacionados a uma dívida. Estou preocupado com as práticas não éticas da empresa que está tentando cobrar essa dívida.",
+      "raw": null,
+      "input_tokens": 1856,
+      "output_tokens": 64,
+      "latency_s": 1.811,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details about the bounty hunter's identification and the mother's fear, making it too vague to act on."
+      }
+    },
+    {
+      "id": "6574386",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor reclama que o PNC Bank não honrou sua política de 24 horas para evitar taxas de overdraft. Ele trouxe seu saldo para positivo dentro do prazo, mas ainda assim foi cobrado por taxas de serviço e overdraft.",
+      "raw": null,
+      "input_tokens": 1871,
+      "output_tokens": 77,
+      "latency_s": 2.346,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific details about the negative balance and the exact amounts charged."
+      }
+    },
+    {
+      "id": "7131982",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor recebeu uma ligação de alguém se passando pelo Bank of America, tentando enganá-lo para transferir dinheiro. Ele confirmou que era um golpe e deseja que as autoridades tomem medidas para evitar que outras pessoas sejam vítimas.",
+      "raw": null,
+      "input_tokens": 1736,
+      "output_tokens": 68,
+      "latency_s": 2.166,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific details about the amount involved and the scam's mechanics."
+      }
+    },
+    {
+      "id": "6788322",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para cancelar uma transferência recorrente para pagamento da hipoteca, que continua a ser debitada de sua conta. Ele tentou resolver o problema com o atendimento ao cliente, mas não obteve sucesso, resultando em pagamentos duplicados acidentais que geram um ônus financeiro.",
+      "raw": null,
+      "input_tokens": 1906,
+      "output_tokens": 86,
+      "latency_s": 3.177,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's issue with the recurring transfer, their attempts to resolve it, and the resulting financial burden."
+      }
+    },
+    {
+      "id": "6480476",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "A empresa de empréstimo tomou meu veículo e nunca me enviou cartas ou documentos sobre o veículo ou onde posso buscar meus pertences que estavam dentro. Estou buscando informações sobre como recuperar meus itens e esclarecer a situação.",
+      "raw": null,
+      "input_tokens": 1680,
+      "output_tokens": 69,
+      "latency_s": 2.309,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but slightly awkward in wording and omits the detail about the repossession process."
+      }
+    },
+    {
+      "id": "6391053",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor recebeu um cartão de débito inesperado da NETSPEND e tentou cancelá-lo, mas não conseguiu falar com o atendimento ao cliente. Ele deseja registrar uma reclamação sobre o envio do cartão e a falta de opções para cancelar a conta.",
+      "raw": null,
+      "input_tokens": 1728,
+      "output_tokens": 73,
+      "latency_s": 2.637,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the unexpected debit card, the failed attempt to cancel it, and the consumer's desire to file a complaint."
+      }
+    },
+    {
+      "id": "6751984",
+      "gold_product": "mortgage",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está tentando assumir um empréstimo FHA com a empresa Mr. Cooper, mas não recebeu resposta após várias tentativas de contato. Ele deseja saber o status de sua aplicação de assunção e fornecer informações adicionais, mas não consegue se comunicar com o departamento responsável.",
+      "raw": null,
+      "input_tokens": 2186,
+      "output_tokens": 81,
+      "latency_s": 3.095,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's attempt to assume an FHA loan with Mr. Cooper, their lack of response, and their desire for status updates and communication with the responsible department."
+      }
+    },
+    {
+      "id": "8006880",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relatou várias informações incorretas em seu relatório de crédito, incluindo endereços e contas que não pertencem a ele. Ele solicita a remoção dessas informações imprecisas do relatório.",
+      "raw": null,
+      "input_tokens": 2073,
+      "output_tokens": 65,
+      "latency_s": 2.552,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's concerns about incorrect information in their credit report and their request for removal."
+      }
+    },
+    {
+      "id": "7911151",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor solicitou a mudança de seus empréstimos estudantis para um novo plano, mas apenas alguns foram alterados sem notificação. Ele deseja resolver a situação e garantir que seus empréstimos sejam gerenciados corretamente.",
+      "raw": null,
+      "input_tokens": 1820,
+      "output_tokens": 72,
+      "latency_s": 3.175,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the lack of follow-up emails and the consumer's experience with customer service."
+      }
+    },
+    {
+      "id": "7006516",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor foi vítima de um golpe onde um suposto representante do Chime obteve informações da conta e transferiu dinheiro para uma pessoa não autorizada. Ele deseja recuperar o valor total de {$450.00} que foi transferido de suas contas.",
+      "raw": null,
+      "input_tokens": 1901,
+      "output_tokens": 74,
+      "latency_s": 2.814,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific amounts transferred from the credit builder and savings accounts."
+      }
+    },
+    {
+      "id": "6497347",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor enviou cartas para as agências de crédito, mas não recebeu resposta. Ele está reclamando sobre a reportagem de informações enganosas e solicita uma revisão das cartas enviadas.",
+      "raw": null,
+      "input_tokens": 1664,
+      "output_tokens": 62,
+      "latency_s": 2.403,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail that there is no third party involved."
+      }
+    },
+    {
+      "id": "6613743",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor iniciou uma transferência no mesmo dia para sua conta do Wells Fargo, mas o banco não conseguiu localizar os fundos, mesmo após confirmação de recebimento. Ele está em uma situação urgente, pois o dinheiro era para custos de fechamento e agora está sem casa.",
+      "raw": null,
+      "input_tokens": 1834,
+      "output_tokens": 72,
+      "latency_s": 1.885,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the transfer issue, the bank's inability to locate the funds, and the urgency of the situation."
+      }
+    },
+    {
+      "id": "6392532",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor relatou atividade suspeita em sua conta bancária, resultando em reembolso por fraude. No entanto, a MONEYLION reportou a quantia como dívida quitada, prejudicando seu crédito, e o consumidor deseja que essa informação seja corrigida.",
+      "raw": null,
+      "input_tokens": 1800,
+      "output_tokens": 80,
+      "latency_s": 2.783,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the key points of the complaint, including the suspicious activity, the reimbursement, the impact on credit, and the consumer's desire for correction."
+      }
+    },
+    {
+      "id": "7720177",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor pediu à Best Egg para parar de ligar para o trabalho, mas as chamadas continuaram. Além disso, ele solicitou uma redução no pagamento e na taxa de juros devido a dificuldades financeiras, mas a empresa se recusou a ajudar.",
+      "raw": null,
+      "input_tokens": 1754,
+      "output_tokens": 77,
+      "latency_s": 3.231,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the detail about the specific interactions with co-workers and voicemails."
+      }
+    },
+    {
+      "id": "6415870",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor teve problemas com a entrega de um sofá danificado e com políticas conflitantes de devolução da loja. Ele deseja um reembolso pelo sofá danificado e está insatisfeito com a resposta da Affirm.",
+      "raw": null,
+      "input_tokens": 1921,
+      "output_tokens": 71,
+      "latency_s": 2.358,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issues but omits the detail about the conflicting policies and the specific dissatisfaction with the delivery service."
+      }
+    },
+    {
+      "id": "7004745",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor escreveu dois cheques que foram roubados e descontados por outra pessoa. Ele deseja uma resolução para o problema, pois os bancos não estão avançando nas investigações.",
+      "raw": null,
+      "input_tokens": 1903,
+      "output_tokens": 65,
+      "latency_s": 2.358,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the checks and the involvement of Citibank."
+      }
+    },
+    {
+      "id": "6440708",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor alega que a NAVY FEDERAL CREDIT UNION está tentando cobrar uma dívida que ele considera inválida e não recebeu a documentação necessária para validar essa dívida. Ele solicita que a instituição cesse as cobranças e forneça as informações solicitadas.",
+      "raw": null,
+      "input_tokens": 2226,
+      "output_tokens": 76,
+      "latency_s": 2.199,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits specific details about the consumer's rights violations and the legal references mentioned."
+      }
+    },
+    {
+      "id": "6504632",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor foi informado de que tinha um saldo devedor em sua conta, o que resultou em um relatório de crédito negativo. Ele solicita que a Comenity Bank remova essa informação incorreta que afetou sua pontuação de crédito.",
+      "raw": null,
+      "input_tokens": 1781,
+      "output_tokens": 72,
+      "latency_s": 2.313,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the detail about the consumer's payment of the outstanding balance and the closure of their account."
+      }
+    },
+    {
+      "id": "7273448",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor foi impactado financeiramente pela Covid e perdeu um pagamento do Care Credit, que foi fechado dois meses depois sem explicação. Ele tentou entrar em contato com a supervisora sobre sua conta, mas recebeu um atendimento ruim e decidiu não recomendar mais o cartão.",
+      "raw": null,
+      "input_tokens": 1690,
+      "output_tokens": 81,
+      "latency_s": 2.262,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's specific complaint regarding the supervisor's attitude."
+      }
+    },
+    {
+      "id": "6547903",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor pagou integralmente o acordo e está tentando obter o formulário 1099C da Santander Consumer USA. Ele entrou em contato cinco vezes, mas não recebeu resposta e foi transferido sem sucesso.",
+      "raw": null,
+      "input_tokens": 1709,
+      "output_tokens": 69,
+      "latency_s": 2.06,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the letter requesting 30 days for updates and the release of title."
+      }
+    },
+    {
+      "id": "7695183",
+      "gold_product": "bank_account",
+      "gold_issue": "Managing an account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Managing an account",
+      "resumo_pt": "O consumidor notou que um pagamento de reembolso não estava refletido em seu saldo, causando preocupação. Ele deseja que o reembolso seja creditado corretamente em sua conta.",
+      "raw": null,
+      "input_tokens": 1724,
+      "output_tokens": 57,
+      "latency_s": 1.638,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits the specific details about the expected date for the refund and the source of income."
+      }
+    },
+    {
+      "id": "7021571",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está insatisfeito com a negativa da Citi em reverter uma cobrança não autorizada de {$440.00} e solicita um crédito, conforme prometido em uma ligação anterior. Ele afirma que não utilizou os serviços do vendedor e pede que a Citi honre sua decisão verbal.",
+      "raw": null,
+      "input_tokens": 2035,
+      "output_tokens": 79,
+      "latency_s": 2.888,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's dissatisfaction with Citi's denial to reverse an unauthorized charge, the amount involved, and the request for credit, all in natural Portuguese."
+      }
+    },
+    {
+      "id": "7275802",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor solicitou a remoção do PMI do seu financiamento hipotecário após a valorização do imóvel e fez o pagamento para a avaliação. Ele está preocupado com a demora na resposta do avaliador e quer uma atualização sobre o status do processo.",
+      "raw": null,
+      "input_tokens": 1713,
+      "output_tokens": 73,
+      "latency_s": 2.658,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific details about the appraisal payment and the timeframe mentioned for the appraiser's response."
+      }
+    },
+    {
+      "id": "6467981",
+      "gold_product": "mortgage",
+      "gold_issue": "Struggling to pay mortgage",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Struggling to pay mortgage",
+      "resumo_pt": "O consumidor relata que o Wells Fargo se recusou a trabalhar com eles, resultando na perda de sua casa após 10 anos. Eles foram forçados a fazer uma venda curta e perderam muito dinheiro devido à situação.",
+      "raw": null,
+      "input_tokens": 1688,
+      "output_tokens": 69,
+      "latency_s": 1.995,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but has a minor omission regarding the involvement of the realtor's group."
+      }
+    },
+    {
+      "id": "7346772",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "Meu filho foi convencido a instalar um aplicativo em sua conta bancária e enviou dinheiro para uma pessoa que o bloqueou. Tentei contatar o banco e o departamento de fraude, mas eles disseram que não podiam fazer nada.",
+      "raw": null,
+      "input_tokens": 1718,
+      "output_tokens": 72,
+      "latency_s": 2.245,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the computer sale and the specific involvement of the Chase bank account."
+      }
+    },
+    {
+      "id": "7355984",
+      "gold_product": "debt_collection",
+      "gold_issue": "Written notification about debt",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "Recebi um alerta de monitoramento de crédito informando que uma cobrança foi adicionada ao meu arquivo de crédito. Nunca recebi uma carta de validação da dívida e isso fez com que minha pontuação de crédito diminuísse.",
+      "raw": null,
+      "input_tokens": 1688,
+      "output_tokens": 71,
+      "latency_s": 2.259,
+      "judge": {
+        "hallucination": false,
+        "score": 3,
+        "reason": "The summary misses important details such as the name of the collection company and the lack of knowledge about it."
+      }
+    },
+    {
+      "id": "6980374",
+      "gold_product": "debt_collection",
+      "gold_issue": "Attempts to collect debt not owed",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "Uma empresa chamada XXXX alegou que eu configurei um sistema de segurança em uma casa que não possuo, mas apenas aluguei um quarto por um curto período. Estou disputando uma conta que foi colocada em meu relatório de crédito, pois não sou responsável por essa dívida que foi gerada por roubo de identidade.",
+      "raw": null,
+      "input_tokens": 1756,
+      "output_tokens": 89,
+      "latency_s": 2.494,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the police report and the involvement of Zion holdings."
+      }
+    },
+    {
+      "id": "7309953",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor teve um aumento no valor da hipoteca devido a um ajuste de imposto sobre a propriedade, mas não foi notificado sobre isso. Ele gostaria de contestar uma taxa de atraso que foi aplicada à sua conta.",
+      "raw": null,
+      "input_tokens": 2235,
+      "output_tokens": 68,
+      "latency_s": 1.896,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits details about the consumer's previous interactions with US Bank and the specific amounts involved."
+      }
+    },
+    {
+      "id": "6573167",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Incorrect information on your report",
+      "resumo_pt": "O consumidor está enfrentando problemas com informações incorretas em seu relatório de crédito, especificamente pagamentos atrasados em um cartão de crédito que nunca ocorreram. Ele deseja que as bureaus corrijam esses erros para que seu status de crédito seja restabelecido.",
+      "raw": null,
+      "input_tokens": 1754,
+      "output_tokens": 77,
+      "latency_s": 2.141,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's issue with incorrect late payment reporting and their desire for correction."
+      }
+    },
+    {
+      "id": "7920958",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Dealing with your lender or servicer",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor pagou seu empréstimo estudantil, mas o pagamento foi postado na conta errada. Ele deseja que a situação seja corrigida e que os pagamentos sejam refletidos corretamente em sua conta.",
+      "raw": null,
+      "input_tokens": 1812,
+      "output_tokens": 69,
+      "latency_s": 3.014,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the missed payment notification and the additional payment made."
+      }
+    },
+    {
+      "id": "6417719",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "Recebi uma notificação da Bridgecrest para fazer um pagamento e o fiz, mas mesmo assim recebi uma marca de pagamento atrasado no meu crédito. Tentei falar com o atendimento ao cliente, mas não consegui falar com um supervisor e quero que isso seja investigado.",
+      "raw": null,
+      "input_tokens": 1696,
+      "output_tokens": 84,
+      "latency_s": 2.539,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific dates and the detail about the email reminder."
+      }
+    },
+    {
+      "id": "7406825",
+      "gold_product": "money_transfer",
+      "gold_issue": "Fraud or scam",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor foi enganado por um golpista que se apresentou como consultor de contratos inteligentes de criptomoedas, levando-o a enviar dinheiro para comprar criptomoedas. Ele perdeu uma quantia significativa e solicita que as plataformas de câmbio de criptomoedas implementem regulamentações para evitar fraudes.",
+      "raw": null,
+      "input_tokens": 1768,
+      "output_tokens": 85,
+      "latency_s": 2.257,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the details about the specific actions taken and the involvement of Coinbase support."
+      }
+    },
+    {
+      "id": "6530005",
+      "gold_product": "bank_account",
+      "gold_issue": "Problem with a lender or other company charging your account",
+      "valid_json": true,
+      "pred_product": "bank_account",
+      "pred_issue": "Problem with a lender or other company charging your account",
+      "resumo_pt": "O consumidor teve uma série de transações não autorizadas em sua conta bancária, resultando na perda de {$1000.00}. Ele está enfrentando dificuldades financeiras devido a taxas atrasadas e não consegue pagar o aluguel.",
+      "raw": null,
+      "input_tokens": 1894,
+      "output_tokens": 75,
+      "latency_s": 3.205,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the unauthorized transactions being signature transactions and the consumer's actions to mitigate the loss."
+      }
+    },
+    {
+      "id": "7677384",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor está enfrentando problemas com informações fraudulentas associadas à sua identidade, resultantes de roubo de identidade. Ele solicita a remoção imediata dessas informações do seu relatório de crédito e uma investigação completa sobre o caso.",
+      "raw": null,
+      "input_tokens": 1751,
+      "output_tokens": 71,
+      "latency_s": 3.156,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately captures the consumer's issue with identity theft and their request for immediate action regarding fraudulent information."
+      }
+    },
+    {
+      "id": "6809547",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O consumidor solicitou o cancelamento do PMI mensal de {$41.00} devido a ter atingido 80% do valor original da propriedade, mas a empresa se recusa a removê-lo. Ele enviou e-mails e solicitações com a documentação de apoio, mas não obteve resposta.",
+      "raw": null,
+      "input_tokens": 1671,
+      "output_tokens": 85,
+      "latency_s": 2.304,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the specific dates of the emails and requests."
+      }
+    },
+    {
+      "id": "6574527",
+      "gold_product": "debt_collection",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "debt_collection",
+      "pred_issue": "Attempts to collect debt not owed",
+      "resumo_pt": "O consumidor recebeu uma cobrança de {$190.00} por uma consulta que não foi informada como paga e se recusou a pagar. Ele está contestando a dívida e relata que isso resultou em uma queda significativa em seu crédito.",
+      "raw": null,
+      "input_tokens": 2039,
+      "output_tokens": 74,
+      "latency_s": 2.098,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits details about the consumer's urgent need and the irrelevant suggestions made during the consultation."
+      }
+    },
+    {
+      "id": "7565038",
+      "gold_product": "money_transfer",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está enfrentando dificuldades para desbloquear um pagamento que foi reportado como retornado por um banco intermediário. Ele não conseguiu obter informações necessárias do JP Morgan Chase Bank para solicitar uma licença que permita desbloquear os fundos.",
+      "raw": null,
+      "input_tokens": 1934,
+      "output_tokens": 66,
+      "latency_s": 3.849,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is faithful but omits specific details about the payment being blocked and the need for a specific license."
+      }
+    },
+    {
+      "id": "7224913",
+      "gold_product": "credit_reporting",
+      "gold_issue": "Incorrect information on your report",
+      "valid_json": true,
+      "pred_product": "credit_reporting",
+      "pred_issue": "Improper use of your report",
+      "resumo_pt": "O consumidor afirma que as informações em seu relatório de crédito estão incorretas e que não deu consentimento para que fossem reportadas. Ele solicita a correção dessas informações, alegando que a falta de consentimento configura fraude.",
+      "raw": null,
+      "input_tokens": 1681,
+      "output_tokens": 71,
+      "latency_s": 1.833,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "A summary captures all key points of the complaint, including the incorrect credit report information, lack of consent, and the request for correction."
+      }
+    },
+    {
+      "id": "7164706",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor está insatisfeito com a forma como os pagamentos estão sendo aplicados ao saldo promocional em vez das novas compras. Ele deseja que a situação seja corrigida, pois acredita que seus pagamentos deveriam ser aplicados de acordo com a Lei de Cartões de Crédito de 2009.",
+      "raw": null,
+      "input_tokens": 1903,
+      "output_tokens": 79,
+      "latency_s": 2.649,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's dissatisfaction with payment application and their request for correction based on the Credit Card Act of 2009."
+      }
+    },
+    {
+      "id": "7807366",
+      "gold_product": "credit_card",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "credit_card",
+      "pred_issue": "Other",
+      "resumo_pt": "O consumidor teve cobranças não autorizadas em seu cartão American Express devido a um hack em sua conta. Ele solicita que a American Express resolva a questão imediatamente, removendo as cobranças e corrigindo seu relatório de crédito.",
+      "raw": null,
+      "input_tokens": 2088,
+      "output_tokens": 66,
+      "latency_s": 1.737,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer's excellent credit rating and the specific amounts involved."
+      }
+    },
+    {
+      "id": "7537710",
+      "gold_product": "bank_account",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "money_transfer",
+      "pred_issue": "Fraud or scam",
+      "resumo_pt": "O consumidor recebeu vários e-mails sobre uma conta na Chime que nunca abriu e suspeita de fraude. Ele deseja que a Chime feche a conta e resolva a situação de fraude.",
+      "raw": null,
+      "input_tokens": 1752,
+      "output_tokens": 62,
+      "latency_s": 1.663,
+      "judge": {
+        "hallucination": false,
+        "score": 5,
+        "reason": "The summary accurately reflects the consumer's complaint about receiving emails regarding an account they did not open and their desire for Chime to close the account and address the fraud."
+      }
+    },
+    {
+      "id": "6432857",
+      "gold_product": "consumer_loan",
+      "gold_issue": "Other",
+      "valid_json": true,
+      "pred_product": "consumer_loan",
+      "pred_issue": "Dealing with your lender or servicer",
+      "resumo_pt": "O consumidor está enfrentando problemas com o pagamento de um empréstimo, onde os valores pagos não estão sendo aplicados corretamente. Ele gostaria de ver o documento original do empréstimo e resolver a situação com o credor.",
+      "raw": null,
+      "input_tokens": 1759,
+      "output_tokens": 72,
+      "latency_s": 1.838,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary captures the main issue and the consumer's request but omits the specific amounts and the detail about the refinancing denial."
+      }
+    },
+    {
+      "id": "7089602",
+      "gold_product": "mortgage",
+      "gold_issue": "Trouble during payment process",
+      "valid_json": true,
+      "pred_product": "mortgage",
+      "pred_issue": "Trouble during payment process",
+      "resumo_pt": "O servicer da hipoteca não pagou o seguro residencial a tempo, resultando na expiração da apólice. O consumidor deseja resolver a questão do pagamento em duplicidade e o reembolso do seguro.",
+      "raw": null,
+      "input_tokens": 1820,
+      "output_tokens": 67,
+      "latency_s": 1.894,
+      "judge": {
+        "hallucination": false,
+        "score": 4,
+        "reason": "The summary is mostly faithful but omits the detail about the consumer paying out of pocket to renew the insurance."
+      }
+    }
+  ]
+}

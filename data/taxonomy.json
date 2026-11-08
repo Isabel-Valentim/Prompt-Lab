@@ -1,0 +1,35 @@
+{
+  "text_source": "https://huggingface.co/datasets/BEE-spoke-data/consumer-finance-complaints/resolve/refs%2Fconvert%2Fparquet/has-text/train/0002.parquet",
+  "label_source": "https://files.consumerfinance.gov/ccdb/complaints.csv.zip",
+  "extracted_on": "2026-11-06",
+  "eligible_rows": 73655,
+  "label_agreement_with_official": 1.0,
+  "filters": {
+    "min_date": "2023-01-01",
+    "min_chars": 300,
+    "max_chars": 3000
+  },
+  "seed": 42,
+  "products": [
+    "bank_account",
+    "consumer_loan",
+    "credit_card",
+    "credit_reporting",
+    "debt_collection",
+    "money_transfer",
+    "mortgage"
+  ],
+  "issues": [
+    "Attempts to collect debt not owed",
+    "Dealing with your lender or servicer",
+    "Fraud or scam",
+    "Improper use of your report",
+    "Incorrect information on your report",
+    "Managing an account",
+    "Problem with a lender or other company charging your account",
+    "Struggling to pay mortgage",
+    "Trouble during payment process",
+    "Written notification about debt",
+    "Other"
+  ]
+}
